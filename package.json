@@ -1,0 +1,22 @@
+{
+  "name": "space-shooters",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^8.1.1",
+    "file-loader": "^6.2.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "pixi-particles": "^4.3.0",
+    "pixi.js": "^6.0.2"
+  }
+}
