@@ -88,7 +88,7 @@ class Entity {
     }
   }
 
-  _afterRemove(stage) {
+  _afterRemove() {
     // Default method does nothing. Child should implement.
   }
 
