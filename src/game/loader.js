@@ -2,9 +2,10 @@ import { Loader } from "pixi.js";
 import Resources from "./resources";
 
 export default function loadGraphics(setup) {
-
   // Get unique spritesheets used by the resources
-  const resources = [...new Set(Object.keys(Resources).map((key) => Resources[key].sheet))];
+  const resources = [
+    ...new Set(Object.keys(Resources).map((key) => Resources[key].sheet)),
+  ];
 
   // Create loader
   const loader = new Loader();
@@ -17,11 +18,9 @@ export default function loadGraphics(setup) {
     bindResourceTextures(loader);
     setup();
   });
-
 }
 
 function bindResourceTextures(loader) {
-
   function addSingleTexture(res) {
     res.texture = loader.resources[res.sheet].textures[res.src];
   }
@@ -38,7 +37,4 @@ function bindResourceTextures(loader) {
   addSingleTexture(Resources.laser);
   addMultipleTextures(Resources.pepeSpin);
   addSingleTexture(Resources.particles);
-
 }
-
-

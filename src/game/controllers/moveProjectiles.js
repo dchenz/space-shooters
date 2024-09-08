@@ -1,8 +1,6 @@
 export function moveProjectiles(projectiles, maxX, maxY) {
-
   // Move all active projectiles forward
   for (let k = 0; k < projectiles.length; k++) {
-
     // Get projectile object
     const proj = projectiles[k];
 
@@ -14,7 +12,5 @@ export function moveProjectiles(projectiles, maxX, maxY) {
       proj.remove();
       projectiles.splice(k, 1);
     }
-
   }
-
 }

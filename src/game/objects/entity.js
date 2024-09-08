@@ -1,9 +1,7 @@
 import { AnimatedSprite, Sprite } from "pixi.js";
 
 class Entity {
-
   constructor(stage, resource, x, y, width, height) {
-
     if (resource.animated) {
       // Animated sprites are created using an array of textures
       this.sprite = new AnimatedSprite(resource.texture);
@@ -32,7 +30,6 @@ class Entity {
     this.setTexture = this.setTexture.bind(this);
     this.remove = this.remove.bind(this);
     this._afterRemove = this._afterRemove.bind(this);
-
   }
 
   // Get X position on stage
@@ -71,7 +68,7 @@ class Entity {
       top: this.getY(),
       left: this.getX(),
       right: this.getX() + this.getWidth(),
-      bottom: this.getY() + this.getHeight()
+      bottom: this.getY() + this.getHeight(),
     };
   }
 
@@ -91,7 +88,6 @@ class Entity {
   _afterRemove() {
     // Default method does nothing. Child should implement.
   }
-
 }
 
 export default Entity;

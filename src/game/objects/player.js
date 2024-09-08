@@ -4,18 +4,18 @@ import Projectile from "./projectiles/projectile";
 import destroyedEffect from "../effects/destroyed";
 
 class Player extends Entity {
-
   static WIDTH = 48;
   static HEIGHT = 48;
 
   constructor(stage) {
-
     super(
-      stage, Resources.player,
+      stage,
+      Resources.player,
       window.innerWidth / 2 - Player.WIDTH / 2,
       window.innerHeight - Player.HEIGHT - 50,
-      Player.WIDTH, Player.HEIGHT
-      );
+      Player.WIDTH,
+      Player.HEIGHT
+    );
 
     this.stage = stage;
     this.isAlive = true;
@@ -34,14 +34,16 @@ class Player extends Entity {
     document.addEventListener("mousemove", this._setPositionOnMouseMove);
     document.addEventListener("mousedown", this._setAttackTrue);
     document.addEventListener("mouseup", this._setAttackFalse);
-
   }
 
   attack() {
     return new Projectile(
       this.stage,
       super.getX() + super.getWidth() / 2,
-      super.getY(), 1, 0, 15
+      super.getY(),
+      1,
+      0,
+      15
     );
   }
 
@@ -82,7 +84,6 @@ class Player extends Entity {
     document.removeEventListener("mousedown", this._setAttackTrue);
     document.removeEventListener("mouseup", this._setAttackFalse);
   }
-
 }
 
 export default Player;

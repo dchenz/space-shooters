@@ -1,8 +1,6 @@
 export function moveEnemies(enemies, maxY, reachBottomHandler) {
-
   // For every enemy on the screen...
   for (let k = 0; k < enemies.length; k++) {
-
     // Get the enemy object
     const enemy = enemies[k];
 
@@ -15,7 +13,5 @@ export function moveEnemies(enemies, maxY, reachBottomHandler) {
       enemies.splice(k, 1);
       reachBottomHandler();
     }
-
   }
-
 }
