@@ -1,19 +1,24 @@
 # Space Shooters
 
-## Build files locally
+## Build project locally
 
 ```sh
-git clone git@github.com:radix-cat/space-shooters.git
 cd space-shooters
-yarn install # or 'npm install'
+
+yarn install
 yarn build
+
+# visit http://localhost:8000
+python3 -m http.server --directory dist
 ```
 
-## Static host
+## Build project using Docker
 
 ```sh
-git clone git@github.com:radix-cat/space-shooters.git
 cd space-shooters
-python3 -m http.server --directory dist
+
+docker build . -t space-shooters
+
 # visit http://localhost:8000
+docker run -p 8000:80 space-shooters
 ```
